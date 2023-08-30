@@ -9,7 +9,7 @@ const forms = (): void => {
         success: 'Success, thanks! we will contact you soon!',
         failure: 'Something went wrong...',
         spinner: 'assets/img/spinner.gif',
-        ok: './ok.png',
+        ok: 'assets/img//ok.png',
         fail: 'assets/img/fail.png'
     };
 
@@ -36,11 +36,19 @@ const forms = (): void => {
         inputs.forEach((input: HTMLInputElement) => {
             input.value = '';
         });
+        uploads.forEach(upload => {
+            upload.previousElementSibling ? upload.previousElementSibling.textContent = 'Файл не выбран': null;
+        });
     }
 
     uploads.forEach(upload => {
         upload.addEventListener('input', () => {
             console.log(upload.files[0]);
+            let dots: string;
+            const arr = upload.files[0].name.split('.');
+            arr[0].length > 6 ? dots = '...' : dots = '.';
+            const name = arr[0].substring(0, 5) + dots + arr[1];
+            upload.previousElementSibling !== null ? upload.previousElementSibling.textContent = name : null;
         })
     });
     forms.forEach((form: HTMLFormElement) => {
