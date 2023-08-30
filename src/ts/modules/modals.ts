@@ -1,5 +1,6 @@
 const modals = (): void => {
     let btnPressed: boolean = false;
+    
     const bindModal = (triggerSelector: string, modalSelector: string, closeSelector: string, destroy: boolean = false): void => {
 
         const trigger: NodeListOf<Element> = document.querySelectorAll(triggerSelector),
@@ -10,15 +11,13 @@ const modals = (): void => {
 
         trigger.forEach(item => {
             item.addEventListener('click', (e: Event) => {
-                if (e.target) {
-                    e.preventDefault();
-                }
+                e.target ? e.preventDefault() : null;
+                
 
                 btnPressed = true;
 
-                if (destroy) {
-                    item.remove();
-                }
+                destroy ? item.remove() : null;
+                
                 windows.forEach(item => {
                     item.style.display = 'none';
                     item.classList.add('animated', 'fadeIn');
@@ -64,9 +63,7 @@ const modals = (): void => {
             let modalActive: boolean| string| undefined;
 
             document.querySelectorAll('[data-modal]').forEach((item: Element) => {
-                if (getComputedStyle(item).display !== 'none') {
-                    modalActive = 'block';
-                }
+                getComputedStyle(item).display !== 'none' ? modalActive = 'block': modalActive = 'none'; 
             });
 
             if (!modalActive) {
