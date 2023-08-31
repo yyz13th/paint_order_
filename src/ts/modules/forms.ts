@@ -9,7 +9,7 @@ const forms = (): void => {
         success: 'Success, thanks! we will contact you soon!',
         failure: 'Something went wrong...',
         spinner: 'assets/img/spinner.gif',
-        ok: 'assets/img//ok.png',
+        ok: 'assets/img/ok.png',
         fail: 'assets/img/fail.png'
     };
 
