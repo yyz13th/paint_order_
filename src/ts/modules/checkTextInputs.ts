@@ -1,4 +1,4 @@
-const checkTextInputs = (selector: string) => {
+const checkTextInputs = (selector: string): void  => {
 
     const txtInputs: NodeListOf<HTMLInputElement> = document.querySelectorAll(selector);
     const regex: RegExp = /[^а-яё 0-9]/ig;
