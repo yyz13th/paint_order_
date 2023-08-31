@@ -28,9 +28,7 @@ const modals = (): void => {
                     document.body.style.overflow = 'hidden';
                 };
 
-                if (modalTimer) {
-                    clearInterval(modalTimer);
-                };
+                modalTimer ? clearInterval(modalTimer) : null;
             });
         });
         if (close && modal) {
