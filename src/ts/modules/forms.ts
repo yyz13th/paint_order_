@@ -1,3 +1,5 @@
+import { postData } from "../services/requests";
+
 
 const forms = (): void => {
     const forms: NodeListOf<HTMLFormElement> = document.querySelectorAll('form'),
@@ -18,19 +20,6 @@ const forms = (): void => {
         question: 'assets/question.php'
     };
 
-    const postData = async (url: string, data: FormData) => {
-        // document.querySelector('.status').textContent = message.loading;
-        let res = await fetch(url, {
-            headers: {
-                "Content-Type": "application/json",
-            },
-            method: "POST",
-            body: data
-        });
-        
-        return await res.text();
-        
-    };
 
     const clearInput = (): void => {
         inputs.forEach((input: HTMLInputElement) => {
