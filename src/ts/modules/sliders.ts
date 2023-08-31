@@ -1,6 +1,6 @@
 const sliders = (slides: string, dir: string, prev: string, next: string): void => {
     let slideIndex: number = 1,
-    paused:number = 0;
+        paused: number = 0;
 
     const items: NodeListOf<HTMLElement> = document.querySelectorAll(slides);
 
@@ -36,7 +36,7 @@ const sliders = (slides: string, dir: string, prev: string, next: string): void 
             nextBtn: HTMLElement | null = document.querySelector(next);
 
 
-        if(prevBtn !== null && nextBtn !== null){
+        if (prevBtn !== null && nextBtn !== null) {
             prevBtn.addEventListener('click', () => {
                 plusSlides(-1);
                 items[slideIndex - 1].classList.remove('slideInRight');
@@ -48,8 +48,8 @@ const sliders = (slides: string, dir: string, prev: string, next: string): void 
                 items[slideIndex - 1].classList.remove('slideInLeft');
                 items[slideIndex - 1].classList.add('slideInRight');
             });
-        }    
-    } catch (error) {}
+        }
+    } catch (error) { }
 
 
     const activateAnimation = (): void => {
