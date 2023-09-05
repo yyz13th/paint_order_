@@ -7,7 +7,7 @@ export default defineConfig({
     sourcemap: true,
    },
 
-  root: './src',
+  root: './',
 
   "include": [
     "src/**/*.ts",
