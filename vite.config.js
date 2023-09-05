@@ -3,7 +3,7 @@ import { defineConfig } from 'vite';
 export default defineConfig({
 
    build: {
-    outDir: 'build',
+    outDir: './src/build',
     sourcemap: true,
    },
 
