@@ -13,7 +13,7 @@ const scrolling = (upSelector: string): void => {
         }
     });
 
-    //scrolling with raf
+    //request animation frame 
     const links: NodeListOf<HTMLElement> = document.querySelectorAll('[href^="#"]');
     const speed: number = 0.3;
 
