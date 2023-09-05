@@ -10,6 +10,7 @@ import pictureSize from "./modules/pictureSize";
 import accordion from "./modules/accordion";
 import burger from "./modules/burger";
 import scrolling from "./modules/scrolling";
+import drop from "./modules/drop";
 
 window.addEventListener("DOMContentLoaded", (): void => {
     'use strict';
@@ -28,6 +29,7 @@ window.addEventListener("DOMContentLoaded", (): void => {
     accordion('.accordion-heading');
     burger('.burger-menu', '.burger')
     scrolling('.pageup');
+    drop();
 
     //npx json-server src/db.json
     //npm run dev
